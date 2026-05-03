@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Realistic Solar System | Your Cosmic Shelf</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="header">
+        <h1>🌌 YOUR COSMIC SHELF</h1>
+        <p>Interactive 3D Solar System</p>
+        <div class="controls-hint">
+            🖱️ Drag to rotate | Scroll to zoom | Click on planets
+        </div>
+    </div>
+
+    <div id="info-panel" class="info-panel">
+        <div class="planet-name" id="planet-name">Solar System</div>
+        <div class="planet-desc" id="planet-desc">Click on any planet to learn about it</div>
+        <div class="planet-fact" id="planet-fact">✨ Explore our cosmic neighborhood</div>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <div class="nav-buttons">
+        <button onclick="showSection('home')" class="active">🌍 Solar System</button>
+        <button onclick="showSection('news')">📰 NASA News</button>
+        <button onclick="showSection('books')">📚 Books</button>
+        <button onclick="showSection('contact')">📧 Contact</button>
+    </div>
+
+    <div id="home-section" class="section active">
+        <!-- 3D canvas is here -->
+    </div>
+
+    <div id="news-section" class="section">
+        <div class="section-container">
+            <h2>NASA LATEST NEWS</h2>
+            <div id="news-container" class="news-grid">
+                <div class="loading">Loading space news...</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="books-section" class="section">
+        <div class="section-container">
+            <h2>ASTRONOMY LIBRARY</h2>
+            <div id="books-container" class="books-grid"></div>
+        </div>
+    </div>
+
+    <div id="contact-section" class="section">
+        <div class="section-container">
+            <h2>CONTACT</h2>
+            <div class="contact-card">
+                <p>✨ Curated by Bouchra Bdb</p>
+                <a href="mailto:lilithseclipse999@gmail.com" class="email">lilithseclipse999@gmail.com</a>
+                <button onclick="copyEmail()" class="copy-btn">📋 Copy Email</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script type="module" src="script.js"></script>
+    <script src="interactions.js"></script>
+</body>
+</html>
